@@ -17,7 +17,7 @@ const mascotaSchema = new mongoose.Schema({
   },
   propietario: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Cliente", // Relación con cliente
+    ref: "Cliente", 
   },
 });
 
