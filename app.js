@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import dbconnect from "./config/db.js";
-import clientesRoutes from "./routes/clientes.js";
-import mascotasRoutes from "./routes/mascotas.js";
+import clientesRoutes from "./api/clientes.js";
+import mascotasRoutes from "./api/mascotas.js";
 
 dotenv.config();
 const app = express();
