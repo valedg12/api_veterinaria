@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import dbconnect from "./config/db.js";
-
 import clientesRoutes from "./routes/clientes.js";
 import mascotasRoutes from "./routes/mascotas.js";
 
@@ -14,16 +13,15 @@ app.use(express.json());
 dbconnect();
 
 
-app.use("/clientes", clientesRoutes);
-app.use("/mascotas", mascotasRoutes);
+app.use("/api/clientes", clientesRoutes);
+app.use("/api/mascotas", mascotasRoutes);
 
 app.get("/", (req, res) => {
-  res.send("✅ API Veterinaria funcionando correctamente (modo local)");
+  res.send("✅ API Veterinaria funcionando correctamente");
 });
 
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`Servidor local en puerto ${PORT}`));
-}
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
 
 export default app;
