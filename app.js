@@ -9,8 +9,6 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-
-
 dbconnect();
 
 
@@ -19,10 +17,8 @@ app.use("/api/mascotas", mascotasRoutes);
 
 
 app.get("/", (req, res) => {
-  res.send("✅ API Veterinaria funcionando correctamente (modo local)");
+  res.send("API Veterinaria funcionando correctamente (Vercel + Express)");
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
 
 export default app;
